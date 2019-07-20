@@ -7,6 +7,7 @@ default_route=`cat /etc/openvpn/default_route.txt`
 /bin/ip route add $default_route
 /bin/route del 172.105.0.194/32 dev wlp1s0 2> /dev/null
 /bin/route del 172.105.112.247/32 dev wlp1s0 2> /dev/null
+/bin/rm /etc/openvpn/default_route.txt
 
 # If we have a service specific script, run this now
 if [ -x /etc/openvpn/"${SVCNAME}"-down.sh ] ; then
